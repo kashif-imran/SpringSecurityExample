@@ -10,6 +10,9 @@
 
    <security:http auto-config="true">
 		<security:intercept-url pattern="/index*" access="ROLE_USER" />
+		<security:form-login login-page="/login" default-target-url="/index"
+			authentication-failure-url="/fail2login" />
+		<security:logout logout-success-url="/logout" />
 	</security:http>
 
     <security:authentication-manager>
