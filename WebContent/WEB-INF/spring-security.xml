@@ -17,9 +17,14 @@
 
     <security:authentication-manager>
 	  <security:authentication-provider>
-	    <security:user-service>
+	   <!-- <security:user-service>
 			<security:user name="kashif" password="reliance" authorities="ROLE_USER" />
-	    </security:user-service>
+	    </security:user-service> -->
+	    <security:jdbc-user-service data-source-ref="dataSource"  
+		      users-by-username-query="select username, password, active from users where username=?" 
+		          authorities-by-username-query="select us.username, ur.authority from users us, user_roles ur 
+		        where us.user_id = ur.user_id and us.username =?  " 
+		  />
 	  </security:authentication-provider>
 	</security:authentication-manager>
 
