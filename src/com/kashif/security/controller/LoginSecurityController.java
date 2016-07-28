@@ -14,6 +14,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class LoginSecurityController {
 	
+	 @RequestMapping(value = "/admin", method = RequestMethod.GET)
+	 public String welcomeAdmin(ModelMap model, Principal principal) {
+	  String username = principal.getName();
+	  model.addAttribute("author", username);
+	  model.addAttribute("message", "Hello Spring Security - ADMIN PAGE");
+	  return "welcome";
+
+	 }
+	
 	@RequestMapping(value="/index", method = RequestMethod.GET)
 	public String executeSecurity(ModelMap model, Principal principal ) {
  

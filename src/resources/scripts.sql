@@ -16,6 +16,8 @@ CREATE TABLE user_roles (
   CONSTRAINT FK_user_roles FOREIGN KEY (USER_ID) REFERENCES users (USER_ID)
 )
 
-INSERT INTO users  VALUES ('1', 'kashif',  'imran',  '1' );
+INSERT INTO users  VALUES ('1', 'kashif',  'kashif',  '1' );
+INSERT INTO users  VALUES ('2', 'mehaboob',  'mehaboob',  '1' );
 
-INSERT INTO user_roles VALUES ('1',  '1',  'ROLE_USER' );
+INSERT INTO user_roles VALUES ('1',  '1',  'ROLE_ADMIN' );
+INSERT INTO user_roles VALUES ('2',  '2',  'ROLE_USER' );
